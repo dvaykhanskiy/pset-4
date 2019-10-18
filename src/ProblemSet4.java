@@ -29,7 +29,7 @@ public class ProblemSet4 {
 
         // ps.sum();
         // ps.reverse();
-        ps.digits();
+        // ps.digits();
         ps.average();
         ps.prime();
         ps.fibonacci();
@@ -148,7 +148,21 @@ public class ProblemSet4 {
      */
 
     public void average() {
-
+      boolean complete = false;
+      double sum = 0;
+      double amountNumbers = 0;
+      while (complete == false) {
+        System.out.print("Non-negative integer: ");
+        long nonNegInt = in.nextLong();
+        if (nonNegInt < 0) {
+          complete = true;
+        } else {
+          sum += nonNegInt;
+          amountNumbers++;
+        }
+      }
+      double average = sum / amountNumbers;
+      System.out.printf("%,.2f.", average);
     }
 
     /*
