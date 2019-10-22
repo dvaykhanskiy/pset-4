@@ -31,8 +31,8 @@ public class ProblemSet4 {
         // ps.reverse();
         // ps.digits();
         // ps.average();
-        ps.prime();
-        ps.fibonacci();
+        // ps.prime();
+        // ps.fibonacci();
         ps.factors();
         ps.mario();
         ps.luigi();
@@ -178,10 +178,14 @@ public class ProblemSet4 {
         System.out.print("Non-negative integer: ");
         double nonNegInt = in.nextDouble();
         if (nonNegInt >= 0) {
+          if (nonNegInt == 0 || nonNegInt == 1) {
+            isPrime = false;
+          } else {
           for (int i = 2; i <= Math.ceil(Math.sqrt(nonNegInt)); i++) {
             if ((nonNegInt % i) == 0) {
               isPrime = false;
             }
+          }
           }
           complete = true;
         }
@@ -201,7 +205,23 @@ public class ProblemSet4 {
      */
 
     public void fibonacci() {
-
+      boolean complete = false;
+      double fibbNum = 0;
+      double oldFibb = 0;
+      double moreOldFibb = 1;
+      while (complete == false) {
+        System.out.print("Positive integer: ");
+        long posInt = in.nextLong();
+        if (0 < posInt && posInt < 93) {
+          for (int i = 0; i <= posInt; i++) {
+            fibbNum = oldFibb + moreOldFibb;
+            moreOldFibb = oldFibb;
+            oldFibb = fibbNum;
+          }
+          complete = true;
+        }
+      }
+      System.out.printf("%,.0f.", moreOldFibb);
     }
 
     /*
