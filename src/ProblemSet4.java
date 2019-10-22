@@ -30,7 +30,7 @@ public class ProblemSet4 {
         // ps.sum();
         // ps.reverse();
         // ps.digits();
-        ps.average();
+        // ps.average();
         ps.prime();
         ps.fibonacci();
         ps.factors();
@@ -172,7 +172,25 @@ public class ProblemSet4 {
      */
 
     public void prime() {
-
+      boolean complete = false;
+      boolean isPrime = true;
+      while (complete == false) {
+        System.out.print("Non-negative integer: ");
+        double nonNegInt = in.nextDouble();
+        if (nonNegInt >= 0) {
+          for (int i = 2; i <= Math.ceil(Math.sqrt(nonNegInt)); i++) {
+            if ((nonNegInt % i) == 0) {
+              isPrime = false;
+            }
+          }
+          complete = true;
+        }
+      }
+      if (isPrime == false) {
+        System.out.println("Not prime.");
+      } else {
+        System.out.println("Prime.");
+      }
     }
 
     /*
