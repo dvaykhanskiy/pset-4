@@ -231,7 +231,21 @@ public class ProblemSet4 {
      */
 
     public void factors() {
-
+      boolean complete = false;
+      while (complete == false) {
+        System.out.print("Positive integer: ");
+        long posInt = in.nextLong();
+        if (posInt >= 1) {
+          System.out.print("1, " + posInt);
+          for (int i = 2; i <= posInt / i; i++) {
+            if ((posInt % i) == 0) {
+              System.out.print(", " + i + ", " + (posInt / i));
+            }
+          }
+          System.out.print(".");
+          complete = true;
+        }
+      }
     }
 
     /*
