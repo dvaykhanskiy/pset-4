@@ -33,8 +33,8 @@ public class ProblemSet4 {
         // ps.average();
         // ps.prime();
         // ps.fibonacci();
-        ps.factors();
-        ps.mario();
+        // ps.factors();
+        // ps.mario();
         ps.luigi();
         ps.credit();
 
@@ -283,7 +283,28 @@ public class ProblemSet4 {
      */
 
     public void luigi() {
-
+      System.out.print("\n");
+      boolean complete = false;
+      while (complete == false) {
+        System.out.print("Height: ");
+        int height = in.nextInt();
+        if (height > 0 && height < 25) {
+          for (int i = 2; i <= height + 1; i++) {
+            System.out.print("\n");
+            for (int j = 0; j < (height + 1 - i); j++) {
+              System.out.print(" ");
+            }
+            for (int k = 0; k < i; k++) {
+              System.out.print("#");
+            }
+            System.out.print("  ");
+            for (int k = 0; k < i; k++) {
+              System.out.print("#");
+            }
+          }
+          complete = true;
+        }
+      }
     }
 
     /*
