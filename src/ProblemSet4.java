@@ -256,7 +256,23 @@ public class ProblemSet4 {
      */
 
     public void mario() {
-
+      boolean complete = false;
+      while (complete == false) {
+        System.out.print("\nHeight: ");
+        int height = in.nextInt();
+        if (height > 0 && height < 25) {
+          for (int i = 2; i <= height + 1; i++) {
+            System.out.print("\n");
+            for (int j = 0; j < (height + 1 - i); j++) {
+              System.out.print(" ");
+            }
+            for (int k = 0; k < i; k++) {
+              System.out.print("#");
+            }
+          }
+          complete = true;
+        }
+      }
     }
 
     /*
