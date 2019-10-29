@@ -35,7 +35,7 @@ public class ProblemSet4 {
         // ps.fibonacci();
         // ps.factors();
         // ps.mario();
-        ps.luigi();
+        // ps.luigi();
         ps.credit();
 
         in.close();
@@ -315,6 +315,55 @@ public class ProblemSet4 {
      */
 
     public void credit() {
+      int sum1 = 0;
+      int sum2 = 0;
+      String sum1String = "";
+      System.out.print("Number: ");
+      long cardNumber = in.nextLong();
 
+      while (cardNumber <= 0) {
+          System.out.print("Number: ");
+          cardNumber = in.nextLong();
+      }
+
+      String cardType = "Invalid";
+
+      String cardString = Long.toString(cardNumber);
+      for (int i = cardString.length() - 2; i > -1; i -= 2) {
+        sum1String += Integer.toString(2 * Integer.parseInt(cardString.substring(i, i + 1)));
+      }
+      for (int j = sum1String.length() - 1; j >= 0; j --) {
+        sum1 += Integer.parseInt(sum1String.substring(j, j + 1));
+      }
+
+      for (int k = cardString.length() - 1; k >= 0; k -= 2 ) {
+        sum2 += Integer.parseInt(cardString.substring(k, k + 1));
+      }
+
+      if (cardString.length() == 15 && (cardString.substring(0, 2).equals("37") || cardString.substring(0, 2).equals("34")) && ((sum1 + sum2) % 10 == 0)) {
+        cardType = "Amex";
+      }  else if ((cardString.length() == 16 || cardString.length() == 13) && ((sum1 + sum2) % 10 == 0) && (cardString.substring(0, 1).equals("4"))) {
+        cardType = "Visa";
+      } else if (cardString.length() == 16 && ((sum1 + sum2) % 10 == 0)) {
+        switch (cardString.substring(0, 2)) {
+         case "51":
+           cardType = "Mastercard";
+           break;
+         case "52":
+           cardType = "Mastercard";
+           break;
+         case "53":
+           cardType = "Mastercard";
+           break;
+         case "54":
+           cardType = "Mastercard";
+           break;
+         case "55":
+           cardType = "Mastercard";
+           break;
+      }
+  }
+
+        System.out.print("\n" + cardType + ".\n");
     }
 }
