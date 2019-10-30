@@ -27,15 +27,15 @@ public class ProblemSet4 {
 
         // comment out or uncomment as needed
 
-        // ps.sum();
-        // ps.reverse();
-        // ps.digits();
-        // ps.average();
-        // ps.prime();
-        // ps.fibonacci();
-        // ps.factors();
-        // ps.mario();
-        // ps.luigi();
+        ps.sum();
+        ps.reverse();
+        ps.digits();
+        ps.average();
+        ps.prime();
+        ps.fibonacci();
+        ps.factors();
+        ps.mario();
+        ps.luigi();
         ps.credit();
 
         in.close();
@@ -75,7 +75,7 @@ public class ProblemSet4 {
           complete = true;
       }
     }
-    System.out.printf("\n%,d", sum);
+    System.out.printf("\n%,d\n", sum);
     }
 
     /*
@@ -86,6 +86,7 @@ public class ProblemSet4 {
      */
 
     public void reverse() {
+      System.out.print("\n");
       boolean complete = false;
       while (complete == false) {
         System.out.print("Positive integer: ");
@@ -93,12 +94,13 @@ public class ProblemSet4 {
         long intLength = String.valueOf(posInt).length();
         int oneDigit = 0;
         if (posInt > 0) {
+          System.out.print("\n");
           for (int i = 0; i < intLength;) {
           oneDigit = (int) posInt % 10;
           posInt /= 10;
           System.out.print(oneDigit);
           if (posInt == 0) {
-            System.out.print(".");
+            System.out.print(".\n");
           } else {
             System.out.print(", ");
           }
@@ -117,9 +119,10 @@ public class ProblemSet4 {
      */
 
     public void digits() {
+      System.out.print("\n");
       boolean complete = false;
       while (complete == false) {
-        System.out.print("\nPositive integer: ");
+        System.out.print("Positive integer: ");
         long posInt = in.nextLong();
         long intLength = String.valueOf(posInt).length();
         int oneDigit = 0;
@@ -133,7 +136,7 @@ public class ProblemSet4 {
           }
           i++;
         }
-        System.out.println(sum + ".\n");
+        System.out.println("\n" + sum + ".\n");
         complete = true;
       }
     }
@@ -162,7 +165,7 @@ public class ProblemSet4 {
         }
       }
       double average = sum / amountNumbers;
-      System.out.printf("%,.2f.", average);
+      System.out.printf("\n%,.2f.\n", average);
     }
 
     /*
@@ -172,6 +175,7 @@ public class ProblemSet4 {
      */
 
     public void prime() {
+      System.out.print("\n");
       boolean complete = false;
       boolean isPrime = true;
       while (complete == false) {
@@ -191,9 +195,9 @@ public class ProblemSet4 {
         }
       }
       if (isPrime == false) {
-        System.out.println("Not prime.");
+        System.out.println("\nNot prime.\n");
       } else {
-        System.out.println("Prime.");
+        System.out.println("\nPrime.\n");
       }
     }
 
@@ -221,7 +225,7 @@ public class ProblemSet4 {
           complete = true;
         }
       }
-      System.out.printf("%,.0f.", moreOldFibb);
+      System.out.printf("\n%,.0f.\n", moreOldFibb);
     }
 
     /*
@@ -231,18 +235,19 @@ public class ProblemSet4 {
      */
 
     public void factors() {
+      System.out.print("\n");
       boolean complete = false;
       while (complete == false) {
         System.out.print("Positive integer: ");
         long posInt = in.nextLong();
         if (posInt >= 1) {
-          System.out.print("1, " + posInt);
+          System.out.print("\n1, " + posInt);
           for (int i = 2; i <= posInt / i; i++) {
             if ((posInt % i) == 0) {
               System.out.print(", " + i + ", " + (posInt / i));
             }
           }
-          System.out.print(".");
+          System.out.print(".\n");
           complete = true;
         }
       }
@@ -256,9 +261,10 @@ public class ProblemSet4 {
      */
 
     public void mario() {
+      System.out.print("\n");
       boolean complete = false;
       while (complete == false) {
-        System.out.print("\nHeight: ");
+        System.out.print("Height: ");
         int height = in.nextInt();
         if (height > 0 && height < 25) {
           for (int i = 2; i <= height + 1; i++) {
@@ -283,6 +289,7 @@ public class ProblemSet4 {
      */
 
     public void luigi() {
+      System.out.print("\n");
       System.out.print("\n");
       boolean complete = false;
       while (complete == false) {
@@ -315,6 +322,8 @@ public class ProblemSet4 {
      */
 
     public void credit() {
+      System.out.print("\n");
+      System.out.print("\n");
       int sum1 = 0;
       int sum2 = 0;
       String sum1String = "";
@@ -364,6 +373,6 @@ public class ProblemSet4 {
       }
   }
 
-        System.out.print("\n" + cardType + ".\n");
+        System.out.print("\n" + cardType + ".\n\n");
     }
 }
